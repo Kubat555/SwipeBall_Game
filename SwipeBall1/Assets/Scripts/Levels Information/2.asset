@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd484a16ff67a4148a1c83edefb01194, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  playerPosition: {x: -0.11, y: 0.5, z: 3.33}
+  playerMaterial: {fileID: 2100000, guid: 1ae5178cc013e0a4a831d7c49fa99f91, type: 2}
+  planeMaterial: {fileID: 2100000, guid: 2a01244330e567940938582a07dc8d6a, type: 2}
