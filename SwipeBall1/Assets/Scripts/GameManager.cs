@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject levelMenu;
     [SerializeField] GameObject gameMenu;
     [SerializeField] GameObject winMenu;
+    [SerializeField] GameObject loseMenu;
 
     public static bool inGame = false;
 
@@ -34,6 +35,9 @@ public class GameManager : MonoBehaviour
     }
 
     void LoseGame(){
+        inGame = false;
+        gameMenu.SetActive(false);
+        loseMenu.transform.localScale = Vector3.one;
         Debug.Log("Lose!!!");
     }
 
@@ -65,6 +69,7 @@ public class GameManager : MonoBehaviour
 
     public void HideWinMenu(){
         winMenu.transform.localScale = Vector3.zero;
+        loseMenu.transform.localScale = Vector3.zero;
     }
 
 

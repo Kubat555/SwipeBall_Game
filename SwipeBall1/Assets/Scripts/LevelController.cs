@@ -27,7 +27,10 @@ public class LevelController : MonoBehaviour
         currentLevelIndex = index;
 
         player.transform.position = levelsInfo[index].playerPosition;
-        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Player.instance.playerMove = false;
+        Player.instance.rb.velocity = Vector3.zero;
+        Player.instance.DisactrivateVectors();
+        // player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.GetComponent<MeshRenderer>().material = levelsInfo[index].playerMaterial;
         if(prevLevel != null){
             prevLevel.SetActive(false);

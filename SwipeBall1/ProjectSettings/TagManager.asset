@@ -9,6 +9,7 @@ TagManager:
   - EndLevel
   - Plane
   - Coin
+  - Enemy
   layers:
   - Default
   - TransparentFX

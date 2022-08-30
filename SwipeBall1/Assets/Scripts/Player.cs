@@ -51,9 +51,9 @@ public class Player : MonoBehaviour
         //     // horizontal = 0;
         //     // vertical = 0;
         // }
-        
+       
 
-        if (Input.GetMouseButtonDown(0) && GameManager.inGame /* && !playerMove */)
+        if (Input.GetMouseButtonDown(0) && GameManager.inGame && !playerMove)
         {
             Vector3 mouse = Input.mousePosition;
             Ray castPoint = Camera.main.ScreenPointToRay(mouse);
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
             Debug.Log("StartPosition " + startTouchPosition);
         }
 
-         if (Input.GetMouseButtonUp(0) && GameManager.inGame /* && !playerMove */)
+         if (Input.GetMouseButtonUp(0) && GameManager.inGame && !playerMove)
         {
             Vector3 mouse = Input.mousePosition;
             Ray castPoint = Camera.main.ScreenPointToRay(mouse);
@@ -93,31 +93,41 @@ public class Player : MonoBehaviour
                 horizontal = 0;
             }
             Debug.Log("EndPosition " + endTouchPosition);
-            playerMove = true;
-           
             
             // horizontal = 0;
             // vertical = 0;
         }
 
-         
+        print("move: " + playerMove);
+        print("collide: " + PlayerCollide.collideWall);
+
+        if(rb.velocity != Vector3.zero){
+            playerMove = true;
+        }else{
+            playerMove = false;
+        }
 
     }
     
 
     private void FixedUpdate() {
         
-        if(playerMove){
-            if (rb.velocity.magnitude >= maxVelocity)
-            {
-                rb.velocity = rb.velocity.normalized * maxVelocity;
-            }
-            rb.velocity += new Vector3(horizontal * speed * Time.deltaTime, 0, vertical * speed * Time.deltaTime);
+        if(!playerMove && GameManager.inGame){
+            // if (rb.velocity.magnitude >= maxVelocity)
+            // {
+            //     rb.velocity = rb.velocity.normalized * maxVelocity;
+            // }
+            rb.velocity = new Vector3(horizontal * speed * Time.deltaTime, 0, vertical * speed * Time.deltaTime);
         }
-        /* if(rb.velocity == Vector3.zero && PlayerCollide.collideWall){
-            playerMove = false;
-        } */
         
+        // if(rb.velocity == Vector3.zero && PlayerCollide.collideWall){
+        //     playerMove = false;
+        // }
+    }
+
+    public void DisactrivateVectors(){
+        horizontal = 0;
+        vertical = 0;
     }
 
 }
