@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   playerPosition: {x: 4.01, y: 0.5, z: 9.93}
-  playerMaterial: {fileID: 2100000, guid: 3f603e19d45e2744dbdc48c2f472c5e3, type: 2}
-  planeMaterial: {fileID: 2100000, guid: 2537a079b2940f44484ddf81a21d54bb, type: 2}
+  playerMaterial: {fileID: 2100000, guid: 0bb4b97cbb681bd429effcd7accb77ea, type: 2}
+  planeMaterial: {fileID: 2100000, guid: c6eff9ac6ce6b804d8e0741f450f1e7a, type: 2}
